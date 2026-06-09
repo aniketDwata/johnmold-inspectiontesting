@@ -18,7 +18,12 @@ export function ContactForm() {
       <Input name="name" autoComplete="name" placeholder="Name" className="form-field rounded-none border-[#9da1a7]" required />
       <Input name="email" type="email" autoComplete="email" placeholder="Email" className="form-field rounded-none border-[#9da1a7]" />
       <Input name="phone" type="tel" autoComplete="tel" placeholder="Phone" className="form-field rounded-none border-[#9da1a7]" required />
-      <Input name="appointmentDate" placeholder="Date of Appointment" className="form-field rounded-none border-[#9da1a7]" />
+      <Input
+        name="appointmentDate"
+        type="date"
+        aria-label="Date of Appointment"
+        className="form-field rounded-none border-[#9da1a7]"
+      />
       <Textarea name="message" placeholder="Message" className="form-field min-h-24 rounded-none border-[#9da1a7]" required />
       <label className="flex items-start gap-2 text-sm leading-7 text-[#61666d]">
         <input name="smsConsent" type="checkbox" className="mt-2 size-3.5 shrink-0" />
