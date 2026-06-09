@@ -72,6 +72,10 @@ async function sendInspectionEmail(submission: InspectionSubmission) {
   }
 
   const subject = `New mold inspection request from ${submission.name}`;
+  const replyTo = submission.email || from;
+  const fromName = submission.email
+    ? `${submission.name} via John Mold Website`
+    : "John Mold Website";
   const body = [
     "New contact form submission",
     "",
@@ -87,9 +91,9 @@ async function sendInspectionEmail(submission: InspectionSubmission) {
   ].join("\n");
 
   const rawMessage = [
-    `From: ${formatMailbox(from, "John Mold Website")}`,
+    `From: ${formatMailbox(from, fromName)}`,
     `To: ${to.join(", ")}`,
-    `Reply-To: ${submission.email || from}`,
+    `Reply-To: ${replyTo}`,
     `Subject: ${encodeEmailHeader(subject)}`,
     "MIME-Version: 1.0",
     "Content-Type: text/plain; charset=UTF-8",
