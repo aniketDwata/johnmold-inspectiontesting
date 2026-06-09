@@ -65,9 +65,9 @@ export async function requestQuote(
 async function sendInspectionEmail(submission: InspectionSubmission) {
   const accessToken = await getGmailAccessToken();
   const from = process.env.GMAIL_FROM_EMAIL;
-  const to = process.env.GMAIL_TO_EMAIL || from;
+  const to = parseEmailList(process.env.GMAIL_TO_EMAIL || from || "");
 
-  if (!from || !to) {
+  if (!from || to.length === 0) {
     throw new Error("Missing GMAIL_FROM_EMAIL or GMAIL_TO_EMAIL");
   }
 
@@ -88,7 +88,7 @@ async function sendInspectionEmail(submission: InspectionSubmission) {
 
   const rawMessage = [
     `From: ${formatMailbox(from, "John Mold Website")}`,
-    `To: ${to}`,
+    `To: ${to.join(", ")}`,
     `Reply-To: ${submission.email || from}`,
     `Subject: ${encodeEmailHeader(subject)}`,
     "MIME-Version: 1.0",
@@ -174,4 +174,11 @@ function encodeEmailHeader(value: string) {
 
 function formatMailbox(email: string, name: string) {
   return `${encodeEmailHeader(name)} <${email}>`;
+}
+
+function parseEmailList(value: string) {
+  return value
+    .split(/[;,]/)
+    .map((email) => email.trim())
+    .filter(Boolean);
 }
