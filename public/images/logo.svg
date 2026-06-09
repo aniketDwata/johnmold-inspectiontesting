@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">John Mold Inspection &amp; Testing logo</title>
+  <desc id="desc">Green shield mark with a home and inspection check.</desc>
+  <rect width="512" height="512" rx="64" fill="#f7f8f4"/>
+  <path d="M256 64 112 118v104c0 94 57 178 144 226 87-48 144-132 144-226V118L256 64Z" fill="#17664a"/>
+  <path d="M166 254 256 178l90 76v112H166V254Z" fill="#ffffff"/>
+  <path d="M143 265 256 170l113 95" fill="none" stroke="#d86f3d" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M215 303 246 334l58-72" fill="none" stroke="#17664a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
