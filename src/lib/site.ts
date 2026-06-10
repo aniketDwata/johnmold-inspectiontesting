@@ -89,7 +89,7 @@ export const services = [
   },
   {
     slug: "mold-remediation",
-    title: "Mold Remediation Guidance",
+    title: "Mold Remediation",
     heading: "Expert Mold Remediation in Tarzana, CA",
     summary:
       "Clear containment, cleanup, and prevention guidance for safer remediation planning and long-term protection.",
